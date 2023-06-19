@@ -6,8 +6,8 @@ function changePasswordIcon() {
     document.querySelector(".passwordStyles").type = "text";
     // let value = document.getElementById("password").value;
     // let pass = document.getElementById("passwordDiv");
-    document.querySelector("#eyeicon").style = "display:none";
-    document.querySelector("#eyeicons").style = "display:block";
+    document.querySelector("#eyeicons").style = "display:none";
+    document.querySelector("#eyeicon").style = "display:block";
     // pass.innerHTML += '<i onclick="changePasswordIcon()" id = "eyeicon" class="fa fa-eye eye" aria-hidden="true"></i>';
     //  pass.innerHTML = '<span class ="mobileSpanStyle"><i class="fa fa-unlock-alt lockicon"></i></span><input id = "password" class = "passwordStyles" type = "Password" placeholder = "Password"><i onclick="changePasswordIcon()" id = "eyeicon" class="fa fa-eye eye" aria-hidden="true"></i>';
     // let pass = document.getElementById("passwor");
@@ -15,8 +15,8 @@ function changePasswordIcon() {
     // document.querySelector("#eyeicon").style = "display:none";
     document.querySelector(".passwordStyles").type = "Password";
     // let value = document.getElementById("password").value;
-    document.querySelector("#eyeicons").style = "display:none";
-    document.querySelector("#eyeicon").style = "display:block";
+    document.querySelector("#eyeicon").style = "display:none";
+    document.querySelector("#eyeicons").style = "display:block";
     // let pass = document.getElementById("passwordDiv");
     // pass.innerHTML += '<i onclick="changePasswordIcon()" id = "eyeicons" class="fa fa-eye eye" aria-hidden="true"></i>';
     // pass.innerHTML = `<span class ="mobileSpanStyle"><i class="fa fa-unlock-alt lockicon"></i></span><input id = "password" class = "passwordStyles" value = ${value} type = "Password" placeholder = "Password"><i onclick="changePasswordIcon()" id = "eyeicon" class="fa fa-eye-slash" aria-hidden="true"></i>`;
@@ -90,7 +90,11 @@ function loginVerify(event) {
             window.location.href =
               "http://localhost:8085/ChatApp/ChatMainPage.html";
           } else {
-            alert(res.message);
+            document.querySelector(".notificationDiv").style = "display:block";
+        document.querySelector(".notification").innerHTML =
+          res.message;
+        let timeout = setTimeout(timeOutFunc, 3000);
+            // alert(res.message);
             event.preventDefault();
           }
         }
@@ -100,10 +104,22 @@ function loginVerify(event) {
       xml.send("mobileNumber=" + mobileNo + "&password=" + password);
     } else {
       event.preventDefault();
-      alert("Minimum Password Length 8");
+      document.querySelector(".notificationDiv").style = "display:block";
+        document.querySelector(".notification").innerHTML =
+          "Minimum Password Length 8";
+        let timeout = setTimeout(timeOutFunc, 3000);
+      // alert("Minimum Password Length 8");
     }
   } else {
     event.preventDefault();
-    alert("Wrong Mobile Number");
+    document.querySelector(".notificationDiv").style = "display:block";
+        document.querySelector(".notification").innerHTML =
+          "Wrong Mobile Number!!!";
+        let timeout = setTimeout(timeOutFunc, 3000);
+    // alert("Wrong Mobile Number");
   }
+}
+
+function timeOutFunc() {
+  document.querySelector(".notificationDiv").style = "display:none";
 }

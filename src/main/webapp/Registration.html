@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="Registration.css" />
+    <script
+      src="https://kit.fontawesome.com/de2421ab51.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bodyContainer">
+    <div class="notificationDiv"><p class="notification"></p></div>
+    <div class="centerPage">
+      <div class="signUpNameDiv">
+        <label class="signUpName">SIGNUP</label>
+      </div>
+      <div class="userNameDiv">
+        <label class="userNameLabel" for=".userName">Name : </label
+        ><input class="userName" type="text" required /><br />
+      </div>
+      <div class="userNameText">
+        <p class="filledUserNameLabel">
+          Name :
+          <label class="setUserName" for=".filledUserNameLabel"></label>
+        </p>
+      </div>
+      <div class="userMobileNoDiv">
+        <label class="userMobileNoLabel" for=".userMobileNo">Mobile No : </label
+        ><input class="userMobileNo" type="number" required /><br />
+      </div>
+      <div class="userMobileNoText">
+        <p class="filledUserMobileNoLabel">
+          Mobile No :<label
+            class="setUserMobileNo"
+            for=".filledUserNameLabel"
+          ></label>
+        </p>
+      </div>
+      <div class="userEmailIdDiv">
+        <label class="userEmailIdLabel" for=".userEmailId">Email id : </label
+        ><input class="userEmailId" type="text" required /><br />
+      </div>
+      <div class="userEmailIdText">
+        <p class="filledUserEmailIdLabel">
+          Email id :<label
+            class="setUserEmailId"
+            for=".filledUserNameLabel"
+          ></label>
+        </p>
+      </div>
+      <div class="userDateOfBirthDiv">
+        <label class="userDateOfBirthLabel" for=".userDateOfBirth"
+          >Date Of Birth : </label
+        ><input class="userDateOfBirth" type="date" required /><br />
+      </div>
+      <div class="userDateOfBirthText">
+        <p class="filledUserDateOfBirthLabel">
+          Date Of Birth :<label
+            class="setUserDateOfBirth"
+            for=".filledUserNameLabel"
+          ></label>
+        </p>
+      </div>
+      <div class="userAboutDiv">
+        <label class="userAboutLabel" for=".about">About : </label
+        ><input class="userAbout" type="text" required /><br />
+      </div>
+      <div class="userAboutText">
+        <p class="filledUserAboutLabel">
+          About :<label class="setUserAbout" for=".filledUserNameLabel"></label>
+        </p>
+      </div>
+      <div class="userPasswordDiv">
+        <label class="userPasswordLabel" for=".password">Password : </label
+        ><input class="userPassword" type="text" required /><br />
+      </div>
+      <div class="userPasswordText">
+        <p class="filledUserPasswordLabel">
+          Password :<label
+            class="setUserPassword"
+            for=".filledUserNameLabel"
+          ></label>
+        </p>
+      </div>
+      <div class="userConfirmPasswordDiv">
+        <label class="userConfirmPasswordLabel" for=".confirmPassword"
+          >Confirm Password : </label
+        ><input class="userConfirmPassword" type="text" /><br />
+      </div>
+      <div class="userConfirmPasswordText">
+        <p class="filledUserConfirmPasswordLabel">
+          Confirm Password :<label
+            class="setUserConfirmPassword"
+            for=".filledUserNameLabel"
+          ></label>
+        </p>
+      </div>
+      <div class="userNextButtonDiv">
+        <input
+          type="submit"
+          onclick="textBoxtoLabelConvert()"
+          class="nextButton"
+          value="next"
+        />
+      </div>
+      <div class="userSignUpButtonDiv">
+        <input
+          type="submit"
+          onclick="saveContents()"
+          class="signUpButton"
+          value="SignUp"
+        />
+      </div>
+      <div class="signInAdjustment">
+        <label class="signInOption"
+          >Do you have an account?<a
+            href="LoginPageDesign.html"
+            class="signInName"
+            >sign in</a
+          ></label
+        >
+      </div>
+    </div>
+    <script src="Registration.js"></script>
+  </body>
+</html>

@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kablammo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -176,15 +179,16 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 .friendNolabel {
-  font-size: 20px;
+  font-size: 19px;
   font-family: "Bebas Neue", cursive;
 }
 
 .friendno {
+  margin-left: 5px;
   padding-left: 20px;
   height: 25px;
   font-family: "Bebas Neue", cursive;
-  width: 100px;
+  width: 120px;
   border-radius: 8px;
   border: 2px solid black;
 }
@@ -210,6 +214,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .Profile {
   float: right;
+  /* clear: both; */
   display: inline-block;
   top: 0;
   width: 5%;
@@ -222,7 +227,9 @@ input[type="number"]::-webkit-outer-spin-button {
   padding-top: 15px;
   font-size: 30px;
   color: lightblue;
-  font-family: "popins", sans-serif;
+  /* font-family: "popins", sans-serif; */
+  /* font-family: "Kablammo", cursive; */
+  font-family: "Fredericka the Great", cursive;
   font-weight: bold;
   width: 100%;
 }
@@ -247,7 +254,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .userSearchDiv {
   display: flex;
   margin-top: 1px;
-  height: 9%;
+  height: 7%;
   background-color: white;
   position: sticky;
   /* position: absolute; */
@@ -262,6 +269,8 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 10px 10px;
   font-size: 28px;
   color: black;
+  margin-left: 17px;
+  margin-top: 6px;
 }
 .userSearch::placeholder {
   color: rgb(204, 204, 204);
@@ -279,7 +288,7 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 18px;
   border-radius: 10px;
   width: 70%;
-  height: 75%;
+  height: 74%;
 }
 .usericon {
   padding-top: 600%;
@@ -309,6 +318,7 @@ body {
   width: 100%;
 }
 .messageHeader {
+  margin-left: 3px;
   height: 10%;
   width: 73.8%;
   border: 2px solid black;
@@ -335,7 +345,7 @@ body {
   border-radius: 20px;
   outline: none;
   margin-top: -15px;
-  width: 71%;
+  width: 74%;
   height: 100%;
   position: sticky;
   top: 0;
@@ -449,8 +459,8 @@ body {
 .CenterDiv {
   border-radius: 0px;
   min-width: 250px;
-  /* display: none; */
-  display: block;
+  display: none;
+  /* display: block; */
   min-height: 150px;
   max-height: 300px;
   background-color: white;
@@ -466,13 +476,13 @@ body {
   z-index: 1;
 }
 .contact {
-  padding-top: 13px;
+  /* padding-top: 13px; */
   text-align: center;
   /* font-family: "Dongle", sans-serif;
   font-family: "DynaPuff", cursive; */
   /* font-family: "Times New Roman", Times, serif; */
   /* font-family: "DynaPuff", cursive; */
-  height: 8.25%;
+  /* height: 9.25%; */
   color: #3e4e53;
   font-size: 20px;
   margin: 2px;
@@ -482,10 +492,10 @@ body {
 .profileImage {
   padding-top: 9px;
   width: 40px;
-  height: 40px;
+  height: 48px;
 }
 .nameContainer {
-  font-size: 25px;
+  font-size: 18px;
   font-family: "PT Sans Caption", sans-serif;
 }
 .messagesList {
@@ -494,4 +504,52 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #cac7c7;
+}
+
+.dpProfileDiv {
+  height: 100%;
+  width: 20%;
+  background-color: black;
+}
+
+.dpProfile {
+  font-size: 35px;
+  margin-top: 7px;
+  height: 38px;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+}
+th {
+  width: 29%;
+}
+table,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td {
+  text-align: left;
+}
+
+.notificationDiv {
+  position: absolute;
+  display: none;
+  border-radius: 7px;
+  top: 42px;
+  left: 34%;
+  z-index: 5;
+  width: 473px;
+  height: 27px;
+  text-align: center;
+  background-color: #d7d7d7;
+}
+.notificationDiv p {
+  font-family: "K anit", sans-serif;
+  font-weight: bold;
+  margin-top: 5px;
 }

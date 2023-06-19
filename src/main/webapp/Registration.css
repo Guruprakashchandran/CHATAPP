@@ -1,0 +1,387 @@
+@charset "ISO-8859-1";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.bodyContainer {
+  height: 100vh;
+  background-image: linear-gradient(#b621fe, #1fd1f2);
+}
+.centerPage {
+  display: inline-block;
+  min-height: 177px;
+  max-height: 409px;
+  /* height: auto; */
+  overflow: auto;
+  min-width: 550px;
+  max-width: 700px;
+  margin-left: 410px;
+  margin-top: 95px;
+  background-color: white;
+  /* border-radius: 10px; */
+}
+.signUpNameDiv {
+  width: 100%;
+  height: 10%;
+  margin-top: 15px;
+  text-align: center;
+  /* position: fixed; */
+}
+.signUpName {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  /* position: fixed; */
+}
+.userNameDiv {
+  /* display: none; */
+  margin-top: 37px;
+}
+.userNameLabel {
+  font-size: 22px;
+  margin-left: 140px;
+  font-family: "Kanit", sans-serif;
+}
+.userName {
+  padding-left: 5px;
+  outline: none;
+  margin-left: 29px;
+  border: none;
+  border-bottom: 2px solid gray;
+  font-size: 18px;
+  width: 175px;
+  font-family: "Kanit", sans-serif;
+}
+.userMobileNoDiv {
+  margin-top: 32px;
+  display: none;
+}
+.userMobileNoLabel {
+  font-size: 22px;
+  margin-left: 97px;
+  font-family: "Kanit", sans-serif;
+}
+.userMobileNo {
+  outline: none;
+  padding-left: 5px;
+  margin-left: 29px;
+  border: none;
+  border-bottom: 2px solid gray;
+  font-size: 18px;
+  width: 175px;
+  font-family: "Kanit", sans-serif;
+}
+.userEmailIdDiv {
+  display: none;
+  margin-top: 32px;
+}
+.userEmailIdLabel {
+  font-size: 22px;
+  margin-left: 117px;
+  font-family: "Kanit", sans-serif;
+}
+.userEmailId {
+  outline: none;
+  padding-left: 5px;
+  margin-left: 29px;
+  border: none;
+  border-bottom: 2px solid gray;
+  font-size: 18px;
+  width: 175px;
+  font-family: "Kanit", sans-serif;
+}
+.userDateOfBirthDiv {
+  display: none;
+  margin-top: 32px;
+}
+.userDateOfBirthLabel {
+  font-size: 22px;
+  margin-left: 72px;
+  font-family: "Kanit", sans-serif;
+}
+.userDateOfBirth {
+  outline: none;
+  width: 168px;
+  padding-left: 5px;
+  margin-left: 29px;
+  border: none;
+  border-bottom: 2px solid gray;
+  font-size: 18px;
+  width: 175px;
+  font-family: "Kanit", sans-serif;
+}
+.userAboutDiv {
+  display: none;
+  margin-top: 32px;
+}
+.userAboutLabel {
+  font-size: 22px;
+  margin-left: 137px;
+  font-family: "Kanit", sans-serif;
+}
+.userAbout {
+  outline: none;
+  padding-left: 5px;
+  margin-left: 29px;
+  border: none;
+  border-bottom: 2px solid gray;
+  font-size: 18px;
+  width: 175px;
+  font-family: "Kanit", sans-serif;
+}
+.userPasswordDiv {
+  display: none;
+  margin-top: 32px;
+}
+.userPasswordLabel {
+  font-size: 22px;
+  margin-left: 107px;
+  font-family: "Kanit", sans-serif;
+}
+.userPassword {
+  outline: none;
+  padding-left: 5px;
+  margin-left: 29px;
+  border: none;
+  border-bottom: 2px solid gray;
+  font-size: 18px;
+  width: 175px;
+  font-family: "Kanit", sans-serif;
+}
+.userConfirmPasswordDiv {
+  display: none;
+  margin-top: 32px;
+}
+.userConfirmPasswordLabel {
+  font-size: 22px;
+  margin-left: 27px;
+  font-family: "Kanit", sans-serif;
+}
+.userConfirmPassword {
+  outline: none;
+  padding-left: 5px;
+  margin-left: 29px;
+  border: none;
+  border-bottom: 2px solid gray;
+  font-size: 18px;
+  width: 175px;
+  font-family: "Kanit", sans-serif;
+}
+.userNextButtonDiv {
+  height: 53px;
+  margin-top: 26px;
+  /* margin-bottom: 40px; */
+}
+.nextButton {
+  width: 68px;
+  height: 40px;
+  border: 2px solid black;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-left: 381px;
+  margin-top: 10px;
+}
+.nextButton:hover {
+  font-size: 20px;
+  background-image: linear-gradient(#ad1deb, #6e72fc);
+  /* background-image: linear-gradient(#5f0a87,#a4508b); */
+  border: none;
+  color: white;
+}
+.userSignUpButtonDiv {
+  display: none;
+  height: 53px;
+  margin-top: 26px;
+  /* margin-bottom: 40px; */
+}
+.signUpButton {
+  width: 68px;
+  height: 40px;
+  border: 2px solid black;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-left: 381px;
+  margin-top: 10px;
+}
+
+.signUpButton:hover {
+  font-size: 20px;
+  background-image: linear-gradient(#ad1deb, #6e72fc);
+  /* background-image: linear-gradient(#5f0a87,#a4508b); */
+  border: none;
+  color: white;
+}
+.signInAdjustment {
+  margin-bottom: 25px;
+}
+.signInOption {
+  margin-left: 20px;
+}
+.signInName {
+  color: blue;
+  margin-left: 5px;
+}
+.signInName:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.userNameText {
+  display: none;
+  margin-top: 32px;
+}
+.userMobileNoText {
+  display: none;
+  margin-top: 32px;
+}
+.userEmailIdText {
+  display: none;
+  margin-top: 32px;
+}
+.userDateOfBirthText {
+  display: none;
+  margin-top: 32px;
+}
+.userAboutText {
+  display: none;
+  margin-top: 32px;
+}
+.userPasswordText {
+  display: none;
+  margin-top: 32px;
+}
+.userConfirmPasswordText {
+  display: none;
+  margin-top: 32px;
+}
+.filledUserNameLabel {
+  font-family: "Kanit", sans-serif;
+  font-size: 22px;
+  margin-left: 140px;
+}
+.filledUserMobileNoLabel {
+  font-size: 22px;
+  margin-left: 97px;
+  font-family: "Kanit", sans-serif;
+}
+.filledUserEmailIdLabel {
+  font-size: 22px;
+  margin-left: 117px;
+  font-family: "Kanit", sans-serif;
+}
+.filledUserDateOfBirthLabel {
+  font-size: 22px;
+  margin-left: 72px;
+  font-family: "Kanit", sans-serif;
+}
+.filledUserAboutLabel {
+  font-size: 22px;
+  margin-left: 137px;
+  font-family: "Kanit", sans-serif;
+}
+.filledUserPasswordLabel {
+  font-size: 22px;
+  margin-left: 107px;
+  font-family: "Kanit", sans-serif;
+}
+.filledUserConfirmPasswordLabel {
+  font-size: 22px;
+  margin-left: 27px;
+  font-family: "K anit", sans-serif;
+}
+.setUserName {
+  margin-left: 25px;
+}
+.setUserMobileNo {
+  margin-left: 25px;
+}
+.setUserEmailId {
+  margin-left: 25px;
+}
+.setUserDateOfBirth {
+  margin-left: 25px;
+}
+.setUserAbout {
+  margin-left: 25px;
+}
+.setUserPassword {
+  margin-left: 25px;
+}
+.setUserConfirmPassword {
+  margin-left: 25px;
+}
+
+.editIcon {
+  font-size: 15px;
+  float: right;
+  margin-right: 100px;
+}
+.userName:focus {
+  border-bottom: 2px solid black;
+}
+.userMobileNo:focus {
+  border-bottom: 2px solid black;
+}
+.userEmailId:focus {
+  border-bottom: 2px solid black;
+}
+.userDateOfBirth:focus {
+  border-bottom: 2px solid black;
+}
+.userAbout:focus {
+  border-bottom: 2px solid black;
+}
+.userPassword:focus {
+  border-bottom: 2px solid black;
+}
+.userConfirmPassword:focus {
+  border-bottom: 2px solid black;
+}
+::-webkit-scrollbar {
+  width: 9px;
+  background: rgb(245, 243, 243);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  /* background-color: rgba(248, 116, 219, 0.888); */
+  /* box-shadow: inset 0 0 20px rgba(231, 146, 213, 0.888); rgba(52, 233, 246, 0.875); */
+  box-shadow: inset 0 0 20px rgba(163, 160, 163, 0.888);
+}
+::-webkit-scrollbar-track {
+  /* margin-top: 70px; */
+  border-radius: 20px;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+  text-decoration: none;
+}
+
+.notificationDiv {
+  position: absolute;
+  display: none;
+  border-radius: 7px;
+  top: 42px;
+  left: 34%;
+  z-index: -1;
+  width: 473px;
+  height: 27px;
+  text-align: center;
+  background-color: #d7d7d7;
+}
+.notificationDiv p {
+  font-family: "K anit", sans-serif;
+  font-weight: bold;
+  margin-top: 5px;
+}

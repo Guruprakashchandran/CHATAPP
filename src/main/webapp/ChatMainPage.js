@@ -86,7 +86,7 @@ function setProfileDetails() {
 function displayPersonalFriendsList(names) {
   let content = "";
   for (let i = 0; i < names.length; i++) {
-    content += `<div class = "contact" onclick = "showPersonalMessages(${i})"><span class = "nameContainer">${names[i]}</span></div>`;
+    content += `<div class = "contact" onclick = "showPersonalMessages(${i})"><table><tr><th rowspan="2"><i class="fa-solid fa-user dpProfile"></i></th><td><span class = "nameContainer">${names[i]}</span></td></tr><tr><td>about</td></tr></table></div>`;
   }
   content =
     '<div class = "groupchatList" id = "groupchatList" style = "height : 100%">' +
@@ -135,7 +135,7 @@ function displayFilterFriendsList(filterFriendsnames, FriendIndexes) {
   let content = "";
   if (filterFriendsnames.length > 0) {
     for (let index = 0; index < filterFriendsnames.length; ++index) {
-      content += `<div class = "contact" onclick = "showPersonalMessages(${FriendIndexes[index]})"><span class = "nameContainer">${filterFriendsnames[index]}</span></div>`;
+      content += `<div class = "contact" onclick = "showPersonalMessages(${FriendIndexes[index]})"><table><tr><th rowspan="2"><i class="fa-solid fa-user dpProfile"></i></th><td><span class = "nameContainer">${filterFriendsnames[index]}</span></td></tr><tr><td>about</td></tr></table></div>`;
     }
   } else {
     content = '<div class = "nofilterContacts">No Contacts</div>';
@@ -291,7 +291,7 @@ function displayGroupList(groupnames) {
   // if(groupnames.length > 0 || list == false){
 
   for (let i = 0; i < groupnames.length; i++) {
-    content += `<div class = "contact" onclick = "showGroupMessages(${i})"><span class = "nameContainer">${groupnames[i]}</span></div>`;
+    content += `<div class = "contact" onclick = "showGroupMessages(${i})"><table><tr><th rowspan="2"><i class="fa-solid fa-user dpProfile"></i></th><td><span class = "nameContainer">${groupnames[i]}</span></td></tr><tr><td>about</td></tr></table></div>`;
   }
   // }
   // if(list == true){
@@ -339,7 +339,7 @@ function displayFilterGroupList(filtergroupnames, groupIndexes) {
   let content = "";
   if (filtergroupnames.length > 0) {
     for (let index = 0; index < filtergroupnames.length; ++index) {
-      content += `<div class = "contact" onclick = "showGroupMessages(${groupIndexes[index]})"><span class = "nameContainer">${filtergroupnames[index]}</span></div>`;
+      content += `<div class = "contact" onclick = "showGroupMessages(${groupIndexes[index]})"><table><tr><th rowspan="2"><i class="fa-solid fa-user dpProfile"></i></th><td><span class = "nameContainer">${filtergroupnames[index]}</span></td></tr><tr><td>about</td></tr></table></div>`;
     }
   } else {
     content = '<div class = "nofilterContacts">No Contacts</div>';
@@ -504,10 +504,17 @@ function addFriendInYourFriendList() {
     if (user.mobileno != friendMobileNumber) {
       addFriendForAjaxCall(friendMobileNumber);
     } else {
-      alert("Its Your Number");
+      document.querySelector(".notificationDiv").style = "display:block";
+      document.querySelector(".notification").innerHTML = "Its Your Number!!!";
+      let timeout = setTimeout(timeOutFunc, 3000);
+      // alert("Its Your Number");
     }
   } else {
-    alert("Wrong Mobile Number!!!");
+    document.querySelector(".notificationDiv").style = "display:block";
+    document.querySelector(".notification").innerHTML =
+      "Wrong Mobile Number!!!";
+    let timeout = setTimeout(timeOutFunc, 3000);
+    // alert("Wrong Mobile Number!!!");
   }
 }
 
@@ -522,7 +529,11 @@ function addFriendForAjaxCall(friendMobileNumber) {
         personalmsg = true;
         personalchatclick();
       } else {
-        alert(response);
+        document.querySelector(".notificationDiv").style = "display:block";
+        document.querySelector(".notification").innerHTML = response;
+        // "Your Mobile No or Email id Already Exist!!!";
+        let timeout = setTimeout(timeOutFunc, 3000);
+        // alert(response);
       }
     }
   };
@@ -604,7 +615,11 @@ function addFriendsToGroup() {
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && this.status == 200) {
       document.getElementById("centerContentDiv").style = "display:none";
-      alert(this.responseText);
+      document.querySelector(".notificationDiv").style = "display:block";
+      document.querySelector(".notification").innerHTML = this.responseText;
+      // "Your Mobile No or Email id Already Exist!!!";
+      let timeout = setTimeout(timeOutFunc, 3000);
+      // alert(this.responseText);
       isGroupChatFirstEntry = true;
       showgroupnames = true;
       groupchatclick();
@@ -622,4 +637,8 @@ function addFriendsToGroup() {
       "&friendsMobileNo=" +
       friendsMobileNos
   );
+}
+
+function timeOutFunc() {
+  document.querySelector(".notificationDiv").style = "display:none";
 }

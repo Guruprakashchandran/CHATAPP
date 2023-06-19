@@ -3,7 +3,8 @@ package com.chatapplication.loginorregisterpage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.chatapp.loginverify.LoginServlet;
+import com.chatapp.loginandregistrationverify.LoginServlet;
+import com.chatapp.loginandregistrationverify.RegistrationServlet;
 //import com.chatapp.loginverify.LoginServlet;
 import com.chatapplication.userdetails.User;
 
@@ -12,25 +13,31 @@ public class LoginOrRegisterPageController implements LoginOrRegisterPageModelTo
 	private LoginOrRegisterPageControllerToViewCall loginOrRegisterPageControllerToViewCall;
 	private LoginOrRegisterPageControllerToModelCall loginOrRegisterPageControllerToModelCall;
 	private LoginServlet login;
+	private RegistrationServlet register;
 	public LoginOrRegisterPageController(LoginServlet loginServlet) {
 		
 		login = loginServlet;
 		loginOrRegisterPageControllerToModelCall = new LoginOrRegisterPageModel(this);
 	}
+	public LoginOrRegisterPageController(RegistrationServlet register) {
+		
+		this.register = register;
+		loginOrRegisterPageControllerToModelCall = new LoginOrRegisterPageModel(this);
+	}
 //	@Override
-//	public void setUserDetails(User user) {
-//		
-//		loginOrRegisterPageControllerToModelCall.setUserDetails(user);
-//	}
+	public void setUserDetails(User user) {
+		
+		loginOrRegisterPageControllerToModelCall.setUserDetails(user);
+	}
 	@Override
 	public void userMobileNoExist() {
 		
-		loginOrRegisterPageControllerToViewCall.userMobileNoExist();
+		register.userMobileNoExist();
 	}
 	@Override
 	public void addedSuccessfully() {
 		
-		loginOrRegisterPageControllerToViewCall.addedSuccessfully();
+		register.addedSuccessfully();
 	}
 	@Override
 	public void userEmailExist() {
