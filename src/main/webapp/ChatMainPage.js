@@ -147,7 +147,7 @@ function showPersonalMessages(i) {
   document.querySelector(".profileViewDiv").style = "display: none";
   let messages = "";
   messages += '<div class = "messageHeader">';
-  messages += `<span class = "chatNameStyle">${names[i]}</span>`;
+  messages += `<div class = "dpDiv"><i class="fa-solid fa-user dpProfileinMsgHeader"></i></div><div class = "friendNameDiv"><span class = "chatNameStyle">${names[i]}</span></div>`;
   messages += "</div>";
   messages += '<div class = "messages" onclick = "bodymessages()">';
   messages += '<div class = "messagesAdjustment">';
@@ -157,6 +157,8 @@ function showPersonalMessages(i) {
   let userdetail = msgObj["userdetail"];
   let frienddetail = msgObj["friend"];
   privatechatclickid = i;
+  console.log(frienddetail);
+  console.log(userdetail);
   let person1msg = 0,
     person2msg = 0;
   // console.log(userdetail);
@@ -167,7 +169,12 @@ function showPersonalMessages(i) {
     frienddetail == null &&
     person1msg != userdetail.length
   ) {
-    messages += `<div class = "yourChat"><p class = "yourMessage">${userdetail[person1msg].msg}</p></div>`;
+    let time = [];
+    time = userdetail[person1msg].date.split(" ");
+    let splitTime = [];
+    splitTime = time[1].split(":");
+    let correctTime = splitTime[0] + ":" + splitTime[1];
+    messages += `<div class = "yourChat"><div class = "yourMessage"><p class = "bodyMessage">${userdetail[person1msg].message}</p><span class = "sendTime">${correctTime}</span></div></div>`;
     person1msg++;
     displayed = false;
   }
@@ -176,7 +183,12 @@ function showPersonalMessages(i) {
     frienddetail != null &&
     person2msg != frienddetail.length
   ) {
-    messages += `<div class = "friendChat"><p class = "friendMessage">${frienddetail[person2msg].msg}</p></div>`;
+    let time = [];
+    time = frienddetail[person2msg].date.split(" ");
+    let splitTime = [];
+    splitTime = time[1].split(":");
+    let correctTime = splitTime[0] + ":" + splitTime[1];
+    messages += `<div class = "friendChat"><div class = "friendMessage"><p class = "bodyMessage">${frienddetail[person2msg].msg}</p><span class = "sendTime">${correctTime}</span></div></div>`;
     person2msg++;
     displayed = false;
   }
@@ -195,17 +207,37 @@ function showPersonalMessages(i) {
           frienddetail[person2msg].date
         );
         if (compare) {
-          messages += `<div class = "yourChat"><p class = "yourMessage">${userdetail[person1msg].msg}</p></div>`;
+          let time = [];
+          time = userdetail[person1msg].date.split(" ");
+          let splitTime = [];
+          splitTime = time[1].split(":");
+          let correctTime = splitTime[0] + ":" + splitTime[1];
+          messages += `<div class = "yourChat"><div class = "yourMessage"><p class = "bodyMessage">${userdetail[person1msg].msg}</p><span class = "sendTime">${correctTime}</span></div></div>`;
           person1msg++;
         } else {
-          messages += `<div class = "friendChat"><p class = "friendMessage">${frienddetail[person2msg].msg}</p></div>`;
+          let time = [];
+          time = frienddetail[person2msg].date.split(" ");
+          let splitTime = [];
+          splitTime = time[1].split(":");
+          let correctTime = splitTime[0] + ":" + splitTime[1];
+          messages += `<div class = "friendChat"><div class = "friendMessage"><p class = "bodyMessage">${frienddetail[person2msg].msg}</p><span class = "sendTime">${correctTime}</span></div></div>`;
           person2msg++;
         }
       } else if (userdetail.length != person1msg) {
-        messages += `<div class = "yourChat"><p class = "yourMessage">${userdetail[person1msg].msg}</p></div>`;
+        let time = [];
+        time = userdetail[person1msg].date.split(" ");
+        let splitTime = [];
+        splitTime = time[1].split(":");
+        let correctTime = splitTime[0] + ":" + splitTime[1];
+        messages += `<div class = "yourChat"><div class = "yourMessage"><p class = "bodyMessage">${userdetail[person1msg].msg}</p><span class = "sendTime">${correctTime}</span></div></div>`;
         person1msg++;
       } else if (frienddetail.length != person2msg) {
-        messages += `<div class = "friendChat"><p class = "friendMessage">${frienddetail[person2msg].msg}</p></div>`;
+        let time = [];
+        time = frienddetail[person2msg].date.split(" ");
+        let splitTime = [];
+        splitTime = time[1].split(":");
+        let correctTime = splitTime[0] + ":" + splitTime[1];
+        messages += `<div class = "friendChat"><div class = "friendMessage"><p class = "bodyMessage">${frienddetail[person2msg].msg}</p><span class = "sendTime">${correctTime}</span></div></div>`;
         person2msg++;
       }
     }
@@ -291,7 +323,7 @@ function displayGroupList(groupnames) {
   // if(groupnames.length > 0 || list == false){
 
   for (let i = 0; i < groupnames.length; i++) {
-    content += `<div class = "contact" onclick = "showGroupMessages(${i})"><table><tr><th rowspan="2"><i class="fa-solid fa-user dpProfile"></i></th><td><span class = "nameContainer">${groupnames[i]}</span></td></tr><tr><td>about</td></tr></table></div>`;
+    content += `<div class = "contact" onclick = "showGroupMessages(${i})"><table><tr><th rowspan="2"><i class="fa fa-users dpProfile"></i></th><td><span class = "nameContainer">${groupnames[i]}</span></td></tr><tr><td>about</td></tr></table></div>`;
   }
   // }
   // if(list == true){
@@ -339,7 +371,7 @@ function displayFilterGroupList(filtergroupnames, groupIndexes) {
   let content = "";
   if (filtergroupnames.length > 0) {
     for (let index = 0; index < filtergroupnames.length; ++index) {
-      content += `<div class = "contact" onclick = "showGroupMessages(${groupIndexes[index]})"><table><tr><th rowspan="2"><i class="fa-solid fa-user dpProfile"></i></th><td><span class = "nameContainer">${filtergroupnames[index]}</span></td></tr><tr><td>about</td></tr></table></div>`;
+      content += `<div class = "contact" onclick = "showGroupMessages(${groupIndexes[index]})"><table><tr><th rowspan="2"><i class="fa fa-users dpProfile"></i></i></th><td><span class = "nameContainer">${filtergroupnames[index]}</span></td></tr><tr><td>about</td></tr></table></div>`;
     }
   } else {
     content = '<div class = "nofilterContacts">No Contacts</div>';
@@ -378,6 +410,8 @@ function showGroupMessages(i) {
   let msgObj = msgArr[i];
   let userdetail = msgObj["userdetail"];
   let groupdetail = msgObj["group"];
+  console.log(userdetail);
+  console.log(groupdetail);
   groupChatclickid = i;
   let person1msg = 0,
     person2msg = 0;
@@ -387,7 +421,12 @@ function showGroupMessages(i) {
     groupdetail == null &&
     person1msg != userdetail.length
   ) {
-    messages += `<div class = "yourChat"><p class = "yourMessage">${userdetail[person1msg].message}</p></div>`;
+    let time = [];
+    time = userdetail[person1msg].date.split(" ");
+    let splitTime = [];
+    splitTime = time[1].split(":");
+    let correctTime = splitTime[0] + ":" + splitTime[1];
+    messages += `<div class = "yourChat"><div class = "yourMessage"><p class = "bodyMessage">${userdetail[person1msg].message}</p><span class = "sendTime">${correctTime}</span></div></div>`;
     person1msg++;
     displayed = false;
   }
@@ -396,7 +435,12 @@ function showGroupMessages(i) {
     groupdetail != null &&
     person2msg != groupdetail.length
   ) {
-    messages += `<div class = "friendChat"><p class = "friendMessage">${groupdetail[person2msg].message}</p></div>`;
+    let time = [];
+    time = groupdetail[person2msg].date.split(" ");
+    let splitTime = [];
+    splitTime = time[1].split(":");
+    let correctTime = splitTime[0] + ":" + splitTime[1];
+    messages += `<div class = "friendChat"><div class = "friendMessage"><p class = "friendName">${groupdetail[person2msg].name}</p><div><p class = "bodyMessage">${groupdetail[person2msg].message}</p><span class = "sendTime">${correctTime}</span></div></div></div>`;
     person2msg++;
     displayed = false;
   }
@@ -412,17 +456,37 @@ function showGroupMessages(i) {
           groupdetail[person2msg].date
         );
         if (compare) {
-          messages += `<div class = "yourChat"><p class = "yourMessage">${userdetail[person1msg].message}</p></div>`;
+          let time = [];
+          time = userdetail[person1msg].date.split(" ");
+          let splitTime = [];
+          splitTime = time[1].split(":");
+          let correctTime = splitTime[0] + ":" + splitTime[1];
+          messages += `<div class = "yourChat"><div class = "yourMessage"><p class = "bodyMessage">${userdetail[person1msg].message}</p><span class = "sendTime">${correctTime}</span></div></div>`;
           person1msg++;
         } else {
-          messages += `<div class = "friendChat"><p class = "friendMessage">${groupdetail[person2msg].message}</p></div>`;
+          let time = [];
+          time = groupdetail[person2msg].date.split(" ");
+          let splitTime = [];
+          splitTime = time[1].split(":");
+          let correctTime = splitTime[0] + ":" + splitTime[1];
+          messages += `<div class = "friendChat"><div class = "friendMessage"><p class = "friendName">${groupdetail[person2msg].name}</p><div><p class = "bodyMessage">${groupdetail[person2msg].message}</p><span class = "sendTime">${correctTime}</span></div></div></div>`;
           person2msg++;
         }
       } else if (userdetail.length != person1msg) {
-        messages += `<div class = "yourChat"><p class = "yourMessage">${userdetail[person1msg].message}</p></div>`;
+        let time = [];
+        time = userdetail[person1msg].date.split(" ");
+        let splitTime = [];
+        splitTime = time[1].split(":");
+        let correctTime = splitTime[0] + ":" + splitTime[1];
+        messages += `<div class = "yourChat"><div class = "yourMessage"><p class = "bodyMessage">${userdetail[person1msg].message}</p><span class = "sendTime">${correctTime}</span></div></div>`;
         person1msg++;
       } else if (groupdetail.length != person2msg) {
-        messages += `<div class = "friendChat"><p class = "friendMessage">${groupdetail[person2msg].message}</p></div>`;
+        let time = [];
+        time = groupdetail[person2msg].date.split(" ");
+        let splitTime = [];
+        splitTime = time[1].split(":");
+        let correctTime = splitTime[0] + ":" + splitTime[1];
+        messages += `<div class = "friendChat"><div class = "friendMessage"><p class = "friendName">${groupdetail[person2msg].name}</p><div><p class = "bodyMessage">${groupdetail[person2msg].message}</p><span class = "sendTime">${correctTime}</span></div></div></div>`;
         person2msg++;
       }
     }
@@ -454,7 +518,7 @@ function compareToDates(date1, date2) {
   for (let j = 0; j < 3; j++) {
     if (parseInt(s3[j], 10) > parseInt(s6[j], 10)) {
       return false;
-    } else if (parseInt(s3[j], 10) > parseInt(s6[j], 10)) {
+    } else if (parseInt(s3[j], 10) < parseInt(s6[j], 10)) {
       return true;
     }
   }
